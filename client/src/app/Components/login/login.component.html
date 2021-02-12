@@ -1,0 +1,41 @@
+<h1 class="page-header">Login</h1>
+
+<div class="row show-hide-message">
+    <div [ngClass]="messageClass">
+        {{ message }}
+    </div>
+</div>
+
+<!-- Registration Form -->
+<form [formGroup]="form" (submit)="onLoginSubmit()">
+
+    <!-- Uername Input -->
+    <div class="form-group">
+        <label for="username">Username</label>
+        <div>
+            <input type="text" name="username" class="form-control"  
+            autocomplete="off" placeholder="*Username"  formControlName="username" />
+        </div>
+       <!-- Validation -->
+    </div>
+   
+
+    <!-- Confirm Passowrd Input -->
+    <div class="form-group">
+        <label for="password">Password</label>
+        <div>
+            <input type="password" name="password" class="form-control" 
+            autocomplete="off" placeholder="*Password" formControlName="password" />
+        </div>
+    </div>
+
+    
+    <!-- Submit Input -->
+    <input [disabled]="!form.valid || processing" type="submit" class="btn btn-primary" value="Login" />
+</form>
+
+
+<!-- <h1></h1>
+<p> Username: {{form.controls.username.value}} </p>
+<p>Email: {{form.controls.email.value}} </p>
+<p>Password: {{form.controls.password.value}}  </p> -->

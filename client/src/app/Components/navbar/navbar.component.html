@@ -13,11 +13,11 @@
 
       <ul class="navbar-nav navbar-right">
         <li class="nav-item"><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="Contact">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/profile">Profile</a></li>
         <li class="nav-item"><a class="nav-link" href="Contact">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="Contact">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="Contact">Logout</a></li>
-        <li class="nav-item"><a class="nav-link" href="Contact">Register</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a></li>
       </ul>
     </div>
   </nav>
