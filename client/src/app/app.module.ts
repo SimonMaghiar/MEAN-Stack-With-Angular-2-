@@ -11,6 +11,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import {AuthService}    from '../app/services/auth.service';
 import { LoginComponent } from './Components/login/login.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import {AuthGuard} from './guards/auth.guard';
+import {NotAuthGuard} from './guards/notAuth.guard';
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
     ReactiveFormsModule,
     
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard,NotAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

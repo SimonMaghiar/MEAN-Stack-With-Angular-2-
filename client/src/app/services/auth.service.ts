@@ -4,6 +4,7 @@ import { HttpClient , HttpHeaders } from '@angular/common/http';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,8 +14,11 @@ export class AuthService {
   authToken;
   user;
   options;
+  
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    ) { }
 
 
   createAuthenticationHeaders() {
@@ -65,5 +69,9 @@ export class AuthService {
   getProfile() {
     this.createAuthenticationHeaders();
     return this.http.get<any>(this.domain + '/authentication/profile',this.options);
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem('user');
   }
 }
